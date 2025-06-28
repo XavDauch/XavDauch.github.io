@@ -285,13 +285,18 @@ article {
     .content-wrapper {
         flex-direction: column;
     }
-    
+
     .block-left, .block-right {
         width: 100%;
     }
-    
+
     .block-left {
+        order: 1; /* Affiché en deuxième */
         margin-bottom: 20px;
+    }
+
+    .block-right {
+        order: 0; /* Affiché en premier */
     }
 }
 
