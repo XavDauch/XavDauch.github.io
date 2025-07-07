@@ -291,12 +291,12 @@ article {
     }
 
     .block-left {
-        order: 1; /* Affiché en deuxième */
+        order: 0; /* Maintenant affiché en premier */
         margin-bottom: 20px;
     }
 
     .block-right {
-        order: 0; /* Affiché en premier */
+        order: 1; /* Maintenant affiché en second */
     }
 }
 
