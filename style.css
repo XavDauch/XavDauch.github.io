@@ -281,17 +281,14 @@ article {
 }
 
 /* Media query pour les écrans de taille moyenne et petite */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
     .content-wrapper {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
-    
+
     .block-left, .block-right {
         width: 100%;
-    }
-    
-    .block-left {
-        margin-bottom: 20px;
+        padding: 20px;
     }
 }
 
