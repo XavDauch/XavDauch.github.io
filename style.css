@@ -1,9 +1,10 @@
-*, *::before, *::after {
+ *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Style de base pour le corps du document avec accessibilité améliorée */
 body {
     font-family: Verdana, sans-serif;
     margin: 0;
@@ -13,6 +14,7 @@ body {
     font-size: 16px;
 }
 
+/* Skip link pour accessibilité clavier */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -23,10 +25,12 @@ body {
     z-index: 100;
     transition: top 0.3s;
 }
+
 .skip-link:focus {
     top: 0;
 }
 
+/* Classe pour le contenu destiné uniquement aux lecteurs d'écran */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -49,82 +53,97 @@ body {
     color: #ffffff;
     padding: 20px 10px;
     text-align: center;
+    margin-bottom: 0;
     font-family: Verdana, sans-serif;
     width: 100%;
 }
+
 .header h1 {
     font-size: 2.2rem;
     margin-bottom: 10px;
+    color: #ffffff; /* Explicitement définir la couleur */
 }
+
 .header h2 {
     font-size: 1.3rem;
-    font-weight: normal;
-    margin-top: 5px;
-    border-bottom: none;
+    color: #ffffff; /* Explicitement définir la couleur */
+    font-weight: normal; /* Pour s'assurer que le texte n'est pas trop gras */
+    margin-top: 5px; /* Ajout d'un espacement au-dessus */
+    opacity: 1; /* S'assurer que le texte est visible */
+    display: block; /* S'assurer que l'élément est affiché comme un bloc */
 }
 
 .navbar {
     background-color: #040404;
     color: #ffffff;
+    margin-top: 0;
+    font-family: Verdana, sans-serif;
     width: 100%;
     padding: 5px 0;
 }
+
 .nav-list {
     display: flex;
     justify-content: start;
     list-style: none;
+    padding: 0;
+    margin: 0;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0;
 }
+
 .nav-list li {
     margin: 0 15px;
 }
+
 .nav-list a {
     text-decoration: none;
     color: white;
     font-size: 18px;
+    font-family: Verdana, sans-serif;
     padding: 10px 15px;
     border-radius: 5px;
     transition: 0.3s;
 }
-.nav-list a:hover,
-.nav-list a:focus {
+
+.nav-list a:hover, .nav-list a:focus {
     background-color: #426c8f;
     outline: 2px solid #fff;
 }
 
 .main-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     padding: 20px 0;
 }
 
-/* Bloc gauche et droit pour desktop */
+/* Conteneur pour les blocs */
 .content-wrapper {
     display: flex;
-    width: 100%;
     justify-content: center;
+    width: 100%;
 }
+
+/* Layout principal en deux colonnes */
 .block-left {
     width: 30%;
     padding: 30px;
     background-color: #f5f5f5;
 }
+
 .block-right {
     width: 60%;
     padding: 20px;
 }
 
-/* Section ordonnée (par défaut desktop) */
-.section-profil { order: 1; }
-.section-experience { order: 2; }
-.section-formation { order: 3; }
-.section-competences { order: 4; }
-.section-contact { order: 5; }
-.section-les-plus { order: 6; }
+/* Style pour les sections dans le bloc gauche */
+.block-c {
+    margin-bottom: 20px;
+}
 
+.block-c p {
+    margin-bottom: 15px;
+}
+
+/* photo pour qu'elle soit ronde, plus petite et centrée */
 .photo {
     width: 120px;
     height: 120px;
@@ -134,42 +153,65 @@ body {
     display: block;
 }
 
+/* Style pour les titres avec espacement amélioré */
 h2 {
     margin: 25px 0 15px;
     font-size: 1.8rem;
     color: #0c4d81;
     border-bottom: 3px solid #000000;
     padding-bottom: 5px;
+    width: 100%;
 }
+
+/* Style spécifique pour éviter que le h2 du header ne soit affecté par les styles généraux des h2 */
+.header h2 {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    font-size: 1.3rem;
+}
+
 h3 {
     margin: 20px 0 5px;
     font-size: 1.4rem;
     color: #333;
-    text-decoration: underline;
+    text-decoration:underline;
 }
+
 h4 {
     margin: 5px 0 10px;
     font-size: 1.1rem;
     font-style: italic;
     color: #555;
+    
 }
+
 h5 {
     margin: 20px 0 5px;
     font-size: 1.3rem;
     color: #333;
     text-decoration: underline;
 }
+
 h6 {
     margin: 5px 0 10px;
     font-size: 1.1rem;
     font-style: italic;
     color: #555;
     text-decoration: underline;
+    
 }
 
-.block-c, .block-d {
-    margin-bottom: 20px;
+/* Style pour la section contact */
+.block-d {
+    margin-top: 15px;
 }
+
+.block-d p {
+    margin-bottom: 10px;
+}
+
 .block-d a {
     color: #0c4d81;
     text-decoration: underline;
@@ -180,6 +222,7 @@ h6 {
     margin-top: 15px;
     gap: 10px;
 }
+
 .social-button {
     display: inline-flex;
     align-items: center;
@@ -189,34 +232,40 @@ h6 {
     background-color: #f5f5f5;
     transition: background-color 0.3s;
 }
-.social-button:hover,
-.social-button:focus {
+
+.social-button:hover, .social-button:focus {
     background-color: #e0e0e0;
     outline: 2px solid #0c4d81;
 }
+
 .social-button img {
     width: 30px;
     height: 30px;
 }
 
+/* Style pour le bloc de droite */
 .container-block-right {
     padding: 10px;
 }
 
+/* Style pour les listes avec meilleur espacement */
 ul {
     margin-left: 40px;
     margin-bottom: 20px;
 }
+
 ul li {
     margin-bottom: 5px;
 }
 
+/* Style pour les compétences */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     margin-top: 15px;
 }
+
 .skill {
     background-color: #0c4d81;
     color: white;
@@ -226,11 +275,27 @@ ul li {
     font-weight: bold;
 }
 
+/* Articles avec espacement amélioré */
 article {
     margin-bottom: 30px;
 }
 
-/* Burger menu pour mobile */
+/* Media query pour les écrans de taille moyenne et petite */
+@media screen and (max-width: 992px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .block-left, .block-right {
+        width: 100%;
+    }
+    
+    .block-left {
+        margin-bottom: 20px;
+    }
+}
+
+/* Style pour le menu burger */
 .burger {
     display: none;
     font-size: 30px;
@@ -242,72 +307,46 @@ article {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 #toggle {
     display: none;
-}
-
-/* Responsive */
-@media screen and (max-width: 992px) {
-    .content-wrapper {
-        flex-direction: column;
-    }
-    .block-left, .block-right {
-        width: 100%;
-    }
-
-    .main-content {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .section-profil { order: 1; }
-    .section-experience { order: 2; }
-    .section-formation { order: 3; }
-    .section-competences { order: 4; }
-    .section-contact { order: 5; }
-    .section-les-plus { order: 6; }
 }
 
 @media screen and (max-width: 768px) {
     .burger {
         display: block;
     }
-
+    
     .navbar {
         display: none;
     }
-
+    
     #toggle:checked + .navbar {
         display: block;
     }
-
+    
     .nav-list {
         flex-direction: column;
         text-align: center;
     }
-
+    
     .nav-list li {
         margin: 0;
         border-bottom: 1px solid #333;
     }
-
+    
     .nav-list a {
         display: block;
         padding: 15px;
     }
 
-    .main-content {
-        flex-direction: column;
+    /* Augmenter la taille des zones cliquables sur mobile */
+    .nav-list a, .social-button {
+        padding: 15px;
     }
-
-    .section-profil { order: 1; }
-    .section-experience { order: 2; }
-    .section-formation { order: 3; }
-    .section-competences { order: 4; }
-    .section-contact { order: 5; }
-    .section-les-plus { order: 6; }
 }
 
+/* Amélioration pour les préférences de mouvement réduites */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
