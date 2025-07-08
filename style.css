@@ -281,22 +281,35 @@ article {
 }
 
 /* Media query pour les écrans de taille moyenne et petite */
-@media screen and (max-width: 992px) {
-    .content-wrapper {
+@media screen and (max-width: 768px) {
+    /* Réorganiser les sections dans le bloc droit sur mobile */
+    .block-right {
+        display: flex;
         flex-direction: column;
     }
 
-    .block-left, .block-right {
-        width: 100%;
+    .block-right section#profil {
+        order: 1;
     }
 
-    .block-left {
-        order: 0; /* Maintenant affiché en premier */
-        margin-bottom: 20px;
+    .block-right section#experience {
+        order: 2;
     }
 
-    .block-right {
-        order: 1; /* Maintenant affiché en second */
+    .block-right section#formation {
+        order: 3;
+    }
+
+    .block-right section#competences {
+        order: 4;
+    }
+
+    .block-right section#contact {
+        order: 5;
+    }
+
+    .block-right section#autres {
+        order: 6;
     }
 }
 
