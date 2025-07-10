@@ -175,8 +175,9 @@ html, body {
 .photo {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 8px; /* petit arrondi optionnel, ou mets 0 pour des coins carrés */
+    object-fit: cover; /* garde un recadrage esthétique */
+    object-position: top; /* montre le haut de l'image (ta tête) */
     margin: 0 auto 20px;
     display: block;
 }
