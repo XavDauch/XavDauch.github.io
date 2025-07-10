@@ -1,41 +1,32 @@
- *::before, *::after {
+/* Réinitialisation et box-sizing global */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Style de base pour le corps du document avec accessibilité améliorée */
-body {
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: auto;
+    box-sizing: border-box;
     font-family: Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
     line-height: 1.6;
     color: #000000;
     font-size: 16px;
     font-style: bold;
-}
-html, body {
-    width: 100%;
-    overflow-x: hidden; /* Empêche le scroll horizontal */
+    margin: 0;
+    padding: 0;
 }
 
-.header,
-.burger {
-    width: 100%;
-    box-sizing: border-box; /* Important pour padding */
-}
-
-/* Centre le bloc "Profil" et limite sa largeur */
 .container-block-center {
-    max-width: 1000px;     /* largeur maximale */
-    margin: 0 auto;       /* centre horizontalement */
-    padding: 2rem 1rem;   /* espace intérieur (haut/bas + gauche/droite) */
-    background-color: #40ACE5; /* optionnel : couleur de fond douce */
-    border-radius: 12px;  /* optionnel : coins arrondis */
-
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background-color: #40ACE5;
+    border-radius: 12px;
 }
 
-/* Style général pour la section Profil */
 .section-profil h2 {
     text-align: center;
     font-size: 2rem;
@@ -51,7 +42,6 @@ html, body {
     color: #000000;
 }
 
-/* Skip link pour accessibilité clavier */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -67,7 +57,6 @@ html, body {
     top: 0;
 }
 
-/* Classe pour le contenu destiné uniquement aux lecteurs d'écran */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -83,6 +72,7 @@ html, body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .header {
@@ -98,16 +88,19 @@ html, body {
 .header h1 {
     font-size: 2.2rem;
     margin-bottom: 10px;
-    color: #ffffff; /* Explicitement définir la couleur */
+    color: #ffffff;
 }
 
 .header h2 {
     font-size: 1.3rem;
-    color: #ffffff; /* Explicitement définir la couleur */
-    font-weight: normal; /* Pour s'assurer que le texte n'est pas trop gras */
-    margin-top: 5px; /* Ajout d'un espacement au-dessus */
-    opacity: 1; /* S'assurer que le texte est visible */
-    display: block; /* S'assurer que l'élément est affiché comme un bloc */
+    color: #ffffff;
+    font-weight: normal;
+    margin-top: 5px;
+    opacity: 1;
+    display: block;
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
@@ -124,9 +117,9 @@ html, body {
     justify-content: start;
     list-style: none;
     padding: 0;
-    margin: 0;
-    max-width: 1200px;
     margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .nav-list li {
@@ -137,7 +130,6 @@ html, body {
     text-decoration: none;
     color: white;
     font-size: 18px;
-    font-family: Verdana, sans-serif;
     padding: 10px 15px;
     border-radius: 5px;
     transition: 0.3s;
@@ -152,26 +144,26 @@ html, body {
     padding: 20px 0;
 }
 
-/* Conteneur pour les blocs */
 .content-wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 
-/* Layout principal en deux colonnes */
 .block-left {
     width: 30%;
     padding: 30px;
     background-color: #f5f5f5;
+    box-sizing: border-box;
 }
 
 .block-right {
     width: 60%;
     padding: 20px;
+    box-sizing: border-box;
 }
 
-/* Style pour les sections dans le bloc gauche */
 .block-c {
     margin-bottom: 20px;
 }
@@ -180,7 +172,6 @@ html, body {
     margin-bottom: 15px;
 }
 
-/* photo pour qu'elle soit ronde, plus petite et centrée */
 .photo {
     width: 120px;
     height: 120px;
@@ -190,7 +181,6 @@ html, body {
     display: block;
 }
 
-/* Style pour les titres avec espacement amélioré */
 h2 {
     margin: 25px 0 15px;
     font-size: 1.8rem;
@@ -200,20 +190,11 @@ h2 {
     width: 100%;
 }
 
-/* Style spécifique pour éviter que le h2 du header ne soit affecté par les styles généraux des h2 */
-.header h2 {
-    border-bottom: none;
-    margin: 0;
-    padding: 0;
-    color: #ffffff;
-    font-size: 1.3rem;
-}
-
 h3 {
     margin: 20px 0 5px;
     font-size: 1.4rem;
     color: #333;
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
 h4 {
@@ -221,7 +202,6 @@ h4 {
     font-size: 1.1rem;
     font-style: italic;
     color: #555;
-    
 }
 
 h5 {
@@ -237,10 +217,8 @@ h6 {
     font-style: italic;
     color: #555;
     text-decoration: underline;
-    
 }
 
-/* Style pour la section contact */
 .block-d {
     margin-top: 15px;
 }
@@ -280,12 +258,11 @@ h6 {
     height: 30px;
 }
 
-/* Style pour le bloc de droite */
 .container-block-right {
     padding: 10px;
+    box-sizing: border-box;
 }
 
-/* Style pour les listes avec meilleur espacement */
 ul {
     margin-left: 40px;
     margin-bottom: 20px;
@@ -295,7 +272,6 @@ ul li {
     margin-bottom: 5px;
 }
 
-/* Style pour les compétences */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -312,32 +288,55 @@ ul li {
     font-weight: bold;
 }
 
-/* Articles avec espacement amélioré */
 article {
     margin-bottom: 30px;
 }
 
-/* Media query pour les écrans de taille moyenne et petite */
 @media screen and (max-width: 768px) {
     .content-wrapper {
-        flex-direction: column; /* ⇦ Mettre .block-right (expérience) en premier */
+        flex-direction: column;
     }
 
     .block-right {
-        order: 1; /* ⇦ Expérience en premier */
-    }
-
-    .block-left {
-        order: 2; /* ⇦ Profil ensuite */
-    }
-
-    .block-left, .block-right {
+        order: 1;
         width: 100%;
         padding: 20px;
     }
+
+    .block-left {
+        order: 2;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    #toggle:checked + .navbar {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-list li {
+        margin: 0;
+        border-bottom: 1px solid #333;
+    }
+
+    .nav-list a, .social-button {
+        display: block;
+        padding: 15px;
+    }
 }
 
-/* Style pour le menu burger */
 .burger {
     display: none;
     font-size: 30px;
@@ -348,47 +347,14 @@ article {
     text-align: right;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #toggle {
     display: none;
 }
 
-@media screen and (max-width: 768px) {
-    .burger {
-        display: block;
-    }
-    
-    .navbar {
-        display: none;
-    }
-    
-    #toggle:checked + .navbar {
-        display: block;
-    }
-    
-    .nav-list {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .nav-list li {
-        margin: 0;
-        border-bottom: 1px solid #333;
-    }
-    
-    .nav-list a {
-        display: block;
-        padding: 15px;
-    }
-
-    /* Augmenter la taille des zones cliquables sur mobile */
-    .nav-list a, .social-button {
-        padding: 15px;
-    }
-}
-
-/* Amélioration pour les préférences de mouvement réduites */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
