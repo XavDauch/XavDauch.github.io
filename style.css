@@ -10,8 +10,35 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
+    color: #000000;
     font-size: 16px;
+    font-style: bold;
+}
+
+/* Centre le bloc "Profil" et limite sa largeur */
+.container-block-center {
+    max-width: 1000px;     /* largeur maximale */
+    margin: 0 auto;       /* centre horizontalement */
+    padding: 2rem 1rem;   /* espace intérieur (haut/bas + gauche/droite) */
+    background-color: #40ACE5; /* optionnel : couleur de fond douce */
+    border-radius: 12px;  /* optionnel : coins arrondis */
+
+}
+
+/* Style général pour la section Profil */
+.section-profil h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.section-profil p {
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 20px;
+    margin-bottom: 1rem;
+    color: #000000;
 }
 
 /* Skip link pour accessibilité clavier */
@@ -19,7 +46,7 @@ body {
     position: absolute;
     top: -40px;
     left: 0;
-    background: #426c8f;
+    background: #40ACE5;
     color: white;
     padding: 8px;
     z-index: 100;
@@ -49,7 +76,7 @@ body {
 }
 
 .header {
-    background-color: #0c4d81;
+    background-color: #40ACE5;
     color: #ffffff;
     padding: 20px 10px;
     text-align: center;
@@ -157,7 +184,7 @@ body {
 h2 {
     margin: 25px 0 15px;
     font-size: 1.8rem;
-    color: #0c4d81;
+    color: #40ACE5;
     border-bottom: 3px solid #000000;
     padding-bottom: 5px;
     width: 100%;
@@ -213,7 +240,7 @@ h6 {
 }
 
 .block-d a {
-    color: #0c4d81;
+    color: #40ACE5;
     text-decoration: underline;
 }
 
@@ -235,7 +262,7 @@ h6 {
 
 .social-button:hover, .social-button:focus {
     background-color: #e0e0e0;
-    outline: 2px solid #0c4d81;
+    outline: 2px solid #40ACE5;
 }
 
 .social-button img {
@@ -267,7 +294,7 @@ ul li {
 }
 
 .skill {
-    background-color: #0c4d81;
+    background-color: #40ACE5;
     color: white;
     padding: 10px 15px;
     border-radius: 20px;
@@ -283,7 +310,15 @@ article {
 /* Media query pour les écrans de taille moyenne et petite */
 @media screen and (max-width: 768px) {
     .content-wrapper {
-        flex-direction: column-reverse;
+        flex-direction: column; /* ⇦ Mettre .block-right (expérience) en premier */
+    }
+
+    .block-right {
+        order: 1; /* ⇦ Expérience en premier */
+    }
+
+    .block-left {
+        order: 2; /* ⇦ Profil ensuite */
     }
 
     .block-left, .block-right {
