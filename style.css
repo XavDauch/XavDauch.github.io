@@ -102,6 +102,24 @@ html, body {
     padding: 0;
 }
 
+/* Menu burger - caché par défaut */
+.burger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    background-color: #040404;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#toggle {
+    display: none;
+}
+
+/* Barre de navigation */
 .navbar {
     background-color: #040404;
     color: #ffffff;
@@ -174,9 +192,9 @@ html, body {
 .photo {
     width: 120px;
     height: 120px;
-    border-radius: 8px; /* petit arrondi optionnel, ou mets 0 pour des coins carrés */
-    object-fit: cover; /* garde un recadrage esthétique */
-    object-position: top; /* montre le haut de l'image (ta tête) */
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: top;
     margin: 0 auto 20px;
     display: block;
 }
@@ -292,7 +310,40 @@ article {
     margin-bottom: 30px;
 }
 
+/* Media queries pour mobile */
 @media screen and (max-width: 768px) {
+    /* Afficher le burger sur mobile */
+    .burger {
+        display: block;
+    }
+
+    /* Masquer la navbar par défaut sur mobile */
+    .navbar {
+        display: none;
+        width: 100%;
+    }
+
+    /* Afficher la navbar quand le burger est coché */
+    #toggle:checked ~ .navbar {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-list li {
+        margin: 0;
+        border-bottom: 1px solid #333;
+    }
+
+    .nav-list a {
+        display: block;
+        padding: 15px;
+    }
+
+    /* Réorganisation du contenu */
     .content-wrapper {
         flex-direction: column;
     }
@@ -308,51 +359,6 @@ article {
         width: 100%;
         padding: 20px;
     }
-
-    .burger {
-        display: block;
-    }
-
-    .navbar {
-        display: none;
-    }
-
-    #toggle:checked + .navbar {
-        display: block;
-    }
-
-    .nav-list {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nav-list li {
-        margin: 0;
-        border-bottom: 1px solid #333;
-    }
-
-    .nav-list a, .social-button {
-        display: block;
-        padding: 15px;
-    }
-}
-
-.burger {
-    display: none;
-    font-size: 30px;
-    color: white;
-    background-color: #040404;
-    padding: 5px 15px;
-    cursor: pointer;
-    text-align: right;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-#toggle {
-    display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
